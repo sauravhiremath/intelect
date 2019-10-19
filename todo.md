@@ -13,3 +13,6 @@
     1. seed(1.0), irrigation(1.1), fertilize(0.6), harvest(1.2) {Process Mgmt, show wating time} {Eff time mgmt for farm practices synchronization}
     2. {Mem Mgtmt} Divide farms into mem blocks,    
     3. DMA simulate chk
+
+Agricul not as tedious as before
+A effective approach towards agri

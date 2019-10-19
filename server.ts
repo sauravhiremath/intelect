@@ -19,7 +19,7 @@ server.listen(port, () => {
 });
 
 export const mongo_uri = "mongodb://localhost:27017/agriOS";
-export const connect = mongoose.connect(mongo_uri);
+export const connect = mongoose.connect(mongo_uri, {useNewUrlParser: true, useUnifiedTopology: true});
 
 app.use("/static", express.static("static"));
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -44,10 +44,10 @@ app.get("/", (req,res) => {
 	res.render("index.html");
 });
 app.get("/inputs", (req, res) => {
-	res.render("inputs.html");
+	res.render("index.html");
 });
 app.get("register", (req, res) => {
-	res.render("register.html")
+	res.render("index.html")
 })
 
 app.use("/auth", authRoutes);
