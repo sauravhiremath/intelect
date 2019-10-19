@@ -18,7 +18,7 @@ server.listen(port, () => {
 	console.log(`Server running on port ${port}`);
 });
 
-export const mongo_uri = "mongodb://localhost:27017/agri";
+export const mongo_uri = "mongodb://localhost:27017/agriOS";
 export const connect = mongoose.connect(mongo_uri);
 
 app.use("/static", express.static("static"));
@@ -30,7 +30,7 @@ app.use(
 		saveUninitialized: true,
 		resave: true,
 		store: new MongoDBStore({
-			uri: "mongodb://localhost:27017/agri",
+			uri: "mongodb://localhost:27017/agriOS",
 			collection: "mySessions"
 		})
 	})
