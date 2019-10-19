@@ -29,8 +29,21 @@ router.post("/fileMgmt", async (req, res) => {
     
 });
 
-router.post("/processMgmt", async (req, res) => {
+router.get("/processMgmt", async (req, res) => {
     const {stdout,stderr} = await exec('python scripts/processMgmt.py');
+    console.log(stdout);
+    console.log(stderr);
+    
+	res.json({
+		success: true,
+		message: stdout
+	});
+});
+
+router.get("/processMgmtBeta", async (req, res) => {
+    const burstTime = req.body.burstTime;
+    console.log(burstTime)
+    const {stdout,stderr} = await exec('python scripts/processMgmt.py', burstTime);
     console.log(stdout);
     console.log(stderr);
     

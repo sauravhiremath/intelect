@@ -1,104 +1,77 @@
-class Queue():
+import sys
+def findWaitingTime(processes, n, bt,
+                    wt, quantum):
+    rem_bt = [0] * n
 
-    def __init__(self, quantum, priority):
-        self.items = []
-        self.quantum = quantum
-        self.priority = priority
+    for i in range(n):
+        rem_bt[i] = bt[i]
+    t = 0
 
-    def isEmpty(self):
-        return self.items == []
+    while(1):
+        done = True
 
-    def enqueue(self, item):
-        item.Qtime = self.quantum
-        item.priority = self.priority
-        self.items.insert(0,item)
+        for i in range(n):
 
-    def dequeue(self):
-        return self.items.pop()
+            if (rem_bt[i] > 0):
+                done = False
 
-    def size(self):
-        return len(self.items)
+                if (rem_bt[i] > quantum):
 
-    def peek(self):
-        return self.items[-1]
+                    t += quantum
 
-class Task():
-    def __init__(self, taskTime):
-        self.taskTime = taskTime
-        self.Qtime = 0
-        self.priority = 0
-
-queues = [Queue(i*10, i) for i in range(256)]
-
-pendingProcs = []
-currProc = None
-
-def schedule():
-    global currProc
-
-    if currProc is not None:
-
-        index = currProc.priority
-
-        Q = queues[index]
-
-        p = currProc
-
-        if p.blocking == 1:
-
-            Q.dequeue()
-
-            if index == 0:
-                Q.enqueue(p)
-
-            else:
-                queues[index-1].enqueue(p)
-
-        elif p.leave == 1:
-
-            Q.dequeue()
-
-            pendingProcs.append({"pid": p.PID, "Qindex": index})
-
-        else:
-
-            p.Qtime = -1
-
-            p.time -= 1
-
-            if p.Qtime <= 0:
-
-                Q.dequeue()
-
-                if p.time > 0:
-
-                    queues[index + 1].enqueue(p)
+                    rem_bt[i] -= quantum
 
                 else:
 
-                    pass
+                    t = t + rem_bt[i]
 
-            elif p.time <= 0:
-                Q.dequeue()
+                    wt[i] = t - bt[i]
 
-            else:
-                pass
+                    rem_bt[i] = 0
 
-    for Q in enumerate(queues):
-
-        if not Q.isEmpty():
-
-            p = Q.peek()
-            currProc = p
-
+        if (done == True):
             break
 
 
-def addToQueue(process):
+def findTurnAroundTime(processes, n, bt, wt, tat):
 
-    if (entry=filter(lambda pp: pp["pid"] == process, pendingProcs)) is not None:
+    for i in range(n):
+        tat[i] = bt[i] + wt[i]
 
-        queues[entry["Qindex"]].enqueue(process)
-    else:
 
-        queues[0].enqueue(process)
+def findavgTime(processes, n, bt, quantum):
+    wt = [0] * n
+    tat = [0] * n
+
+    findWaitingTime(processes, n, bt,
+                    wt, quantum)
+
+    findTurnAroundTime(processes, n, bt,
+                       wt, tat)
+
+    # print("Processes    Burst Time     Waiting",
+    #       "Time    Turn-Around Time")
+    total_wt = 0
+    total_tat = 0
+    for i in range(n):
+
+        total_wt = total_wt + wt[i]
+        total_tat = total_tat + tat[i]
+        # print(" ", i + 1, "\t\t", bt[i],
+        #       "\t\t", wt[i], "\t\t", tat[i])
+
+    print("\nAverage waiting time = %.5f " % (total_wt / n))
+    # print("Average turn around time = %.5f " % (total_tat / n))
+
+
+if __name__ == "__main__":
+
+    proc = [1, 2, 3, 4]
+    n = 3
+
+    burst_time = [10,11,6,14]
+
+    print(sys.argv)
+
+    quantum = 2
+    findavgTime(proc, n, burst_time, quantum)
