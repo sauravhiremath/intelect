@@ -19,6 +19,9 @@ router.get("/transcript", async (req, res) => {
     })
 });
 
+router.get("/test", (req, res) => {
+	res.send("Hello");
+})
 router.get("/topics", async (req, res) => {
     // const fileName = req.query.fileName;
 	const { stdout, stderr } = await exec("python scripts/topics.py");
