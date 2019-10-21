@@ -52,7 +52,7 @@ router.get("/transcript", async (req, res) => {
 router.post("/upload", upload.single("portion"), async (req, res) => {
 	const fileName = req.body.fileName;
 	if (req.file) {
-		const { stdout, stderr } = await exec("python scripts/topics.py", fileName);
+		const { stdout, stderr } = await exec("python3 scripts/topics.py", fileName);
 		console.log(stdout);
 		console.log(stderr);
 
@@ -70,7 +70,7 @@ router.post("/upload", upload.single("portion"), async (req, res) => {
 
 router.get("/topics", async (req, res) => {
 	const fileName = req.query.fileName;
-	const { stdout, stderr } = await exec("python scripts/topics.py");
+	const { stdout, stderr } = await exec("python3 scripts/topics.py");
 	console.log(stdout);
 	console.log(stderr);
 
@@ -150,6 +150,6 @@ router.get("/mainTopics", async (req, res) => {
 });
 
 async function get_transcript_py(id) {
-	const { stdout, stderr } = await exec("python scripts/transcript.py " + id);
+	const { stdout, stderr } = await exec("python3 scripts/transcript.py " + id);
 	return stdout;
 }

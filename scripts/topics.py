@@ -5,7 +5,8 @@ import urllib.request
 import PyPDF2
 import random
 
-file_path = 'uploads/' + sys.args[0]
+file_path = 'uploads/' + sys.argv[1]
+# print(sys.argv)
 pdf_file = open(file_path, 'rb')
 read_pdf = PyPDF2.PdfFileReader(pdf_file)
 number_of_pages = read_pdf.getNumPages()
@@ -42,7 +43,7 @@ vid_time = ""
 # print(vid_time)
 
 for i in sub_topics[3:]:
-    print('Done with' + i)
+    # print('Done with' + i)
     query_string = urllib.parse.urlencode({"search_query" : i + 'in' + subj_name})
     # print(query_string)
     html_content = urllib.request.urlopen("http://www.youtube.com/results?" + query_string)
