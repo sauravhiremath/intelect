@@ -5,6 +5,7 @@ import session from "express-session";
 import http from "http";
 import homeRoutes from "./routes/homeRoutes";
 
+
 const app = express();
 require("dotenv").config();
 const port = process.env.PORT || 4000;
@@ -19,6 +20,7 @@ export const mongo_uri = "mongodb://localhost:27017/intelect";
 export const connect = mongoose.connect(mongo_uri, {useNewUrlParser: true, useUnifiedTopology: true});
 
 app.use("/static", express.static("static"));
+app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(
