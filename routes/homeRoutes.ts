@@ -2,6 +2,7 @@ import { Router } from "express";
 import session from "express-session";
 import util from "util";
 const axios = require("axios");
+const dialogflow = require('dialogflow').v2beta1;
 const getYoutubeSubtitles = require("@joegesualdo/get-youtube-subtitles-node");
 const exec = util.promisify(require("child_process").exec);
 

@@ -5,7 +5,7 @@ export interface userInterface extends mongoose.Document {
     name: string,
     username: string,
     password: string,
-    rooms: string[],
+    rooms: string[]
 }  
 
 export const userSchema = new Schema({
