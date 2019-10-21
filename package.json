@@ -9,7 +9,9 @@
   "author": "OS Project",
   "license": "ISC",
   "dependencies": {
+    "@joegesualdo/get-youtube-subtitles-node": "^0.1.0",
     "async": "^3.1.0",
+    "axios": "^0.19.0",
     "bcrypt": "^3.0.6",
     "body-parser": "^1.19.0",
     "connect-mongodb-session": "^2.2.0",

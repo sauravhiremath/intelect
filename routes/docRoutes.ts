@@ -1,6 +1,6 @@
 import { Router } from "express";
 import session from "express-session";
-import Patient from "../models/patient";
+import Patient from "../models/room";
 import util from "util";
 import formidable from "formidable";
 const exec = util.promisify(require('child_process').exec);

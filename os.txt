@@ -1,0 +1,310 @@
+starting
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+CSE2005
+ 
+Operating Systems
+ 
+  
+ 
+L
+ 
+T
+ 
+P
+ 
+J
+ 
+C 
+     
+ 
+                                                                                                                 
+                        
+2
+ 
+ 
+0
+ 
+ 
+2
+ 
+4
+ 
+ 
+4
+ 
+Preamble 
+ 
+The course 
+will 
+i
+mpart an understanding of the challen
+ges encountered when designing, implementing, 
+and using operating systems. 
+ 
+Objectives
+ 
+The objective of the course is to 
+ 
+
+ 
+enable the student to appreciate the need to protection, isolation, abstraction and virtualization. 
+ 
+
+ 
+Understand and 
+evaluate trade
+-
+of
+fs between conflicting objectives in large scale system design.
+ 
+Expected Outcome
+ 
+On completion of the
+ 
+course
+, 
+ 
+the student should be able to
+ 
+a) Differentiate between the use
+r and kernel mode operations 
+ 
+b) Describe use of semaphores, interrupts, 
+context s
+witching 
+ 
+c) Write a prog
+ram implementing concurrency 
+ 
+d) Write si
+mple multi
+-
+threaded programs 
+ 
+e) Evaluate the trade
+-
+offs in the memory hierarchy
+ 
+f) Summarize the 
+principles of Virtual Memory 
+ 
+g) Evaluate trade
+-
+offs due to virtual
+ization 
+ 
+h Explain OS Vir
+tualizati
+on 
+
+ 
+Create Linux Containers
+ 
+i) Discuss the issues related to secu
+rity in the operating system 
+ 
+Module 
+ 
+Topics
+ 
+L Hrs
+ 
+SLO
+ 
+1
+ 
+Intr
+oduction to OS: 
+-
+ 
+Functionality of OS 
+-
+  
+OS Design issues 
+-
+ 
+Structuring methods (monolithic, layered, modular, micro
+-
+kernel 
+models) 
+-
+ 
+Abstractions, processes, and resources 
+-
+ 
+influence of security, 
+networking, multimedia
+ 
+2
+ 
+2
+ 
+2
+ 
+OS Principles: 
+System Calls 
+
+ 
+System/Application Call Interface 
+-
+ 
+Protection User/Kernel modes 
+-
+ 
+Interrupts 
+
+ 
+Processes and Threads 
+-
+ 
+Structures (Process Control Block, Ready List etc)
+ 
+3
+ 
+11
+ 
+3
+ 
+Scheduling:
+ 
+Processes Scheduling 
+-
+ 
+CPU Scheduling 
+-
+ 
+Pre
+-
+emptive & 
+non
+-
+pre
+-
+emptive 
+-
+ 
+Resourc
+e allocation and management 
+-
+ 
+Deadlocks 
+
+ 
+Deadlock Handling Mechanisms
+ 
+5
+ 
+17
+ 
+4
+ 
+Concurrency:
+ 
+Inter
+-
+process communication 
+
+ 
+Synchronization 
+-
+ 
+Implementing Synchronization Primitives 
+
+ 
+Semaphores 
+-
+ 
+Monitors 
+-
+ 
+Multiprocessors and Locking 
+-
+ 
+Scalable Locks 
+-
+ 
+Loc
+k
+-
+free Coordination
+ 
+4
+ 
+17
+ 
+5
+ 
+Memory management:
+ 
+Main Memory management 
+-
+ 
+Memory 
+allocation strategies 
+
+ 
+Caching 
+-
+Virtual Memory Hardware 
+
+ 
+TLB 
+-
+ 
+Virtual Memory OS techniques 
+
+ 
+Paging 
+
+ 
+Segmentation 
+
+ 
+Page Faults 
+
+ 
+Page Replacement 
+
+ 
+Thrashing 
+
+ 
+Working Set
+ 
+5
+ 
+14
+ 
+6
+ 
+Virtualization:
+ 
+Virtual Machines 
+
+ 
+Virtualization (Hardware/Software, 
+Server, Service, Network) 
+
+ 
+Hypervisors 
+-
+OS 
+-
+ 
+Container Virtualization 
+-
+ 
+Cost of virtualization 
+ 
+4
+ 
+11
+ 
+
