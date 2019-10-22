@@ -9,6 +9,7 @@
   "author": "OS Project",
   "license": "ISC",
   "dependencies": {
+    "@joegesualdo/get-youtube-subtitle-url-node": "^0.1.0",
     "@google-cloud/language": "^3.5.0",
     "@joegesualdo/get-youtube-subtitles-node": "^0.1.0",
     "async": "^3.1.0",
@@ -24,6 +25,7 @@
     "express-handlebars": "^3.1.0",
     "express-session": "^1.17.0",
     "http": "0.0.0",
+    "mime-db": "^1.42.0",
     "mongoose": "^5.7.4",
     "multer": "^1.4.2",
     "nodejs-assistant": "^0.7.1",

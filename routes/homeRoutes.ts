@@ -42,10 +42,26 @@ export default router;
 router.get("/transcript", async (req, res) => {
 	// console.log("working");
 	const id = req.query.transcript_id;
-	const transcript = await get_transcript_py(id);
+    const transcript = await get_transcript_py(id);
+    res.json({
+        success: true,
+        message: transcript
+    })
+});
+
+router.get("/test", (req, res) => {
+	res.send("Hello");
+});
+
+router.get("/topics", async (req, res) => {
+    // const fileName = req.query.fileName;
+	const { stdout, stderr } = await exec("python scripts/topics.py");
+	console.log(stdout);
+	console.log(stderr);
+
 	res.json({
 		success: true,
-		message: transcript
+		message: stdout
 	});
 });
 
