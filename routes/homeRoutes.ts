@@ -70,7 +70,7 @@ router.post("/upload", upload.single("portion"), async (req, res) => {
 
 router.get("/topics", async (req, res) => {
 	const fileName = req.query.fileName;
-	const { stdout, stderr } = await exec("python3 scripts/topics.py");
+	const { stdout, stderr } = await exec("python3 scripts/topics.py", fileName);
 	console.log(stdout);
 	console.log(stderr);
 
